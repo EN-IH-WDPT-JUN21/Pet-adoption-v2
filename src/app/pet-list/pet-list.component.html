@@ -1,4 +1,14 @@
+<div class="container">
+    <h3>Find your pet:</h3>
+    <input type="number" placeholder="Min age" [(ngModel)]="minAge">
+    <input type="number" placeholder="Max age" [(ngModel)]="maxAge">
+    
+    <select [(ngModel)]="selectedType">
+        <option *ngFor="let type of animalTypes" [ngValue]="type">{{ type }}</option>
+    </select>
 
+    <button class="btn btn-success" (click)='searchAnimals(selectedType, minAge, maxAge)'> Search</button>
+</div>
 <div class="container">
     <div class="team">
         <h3> Adoptable pets:</h3>

@@ -23,7 +23,7 @@ export class AnimalAdoptionAPIService {
       const httpOptions = {
         params: httpParams
       };
-      return this.http.get<AnimalResponse[]>(this.baseUrl);
+      return this.http.get<AnimalResponse[]>(this.baseUrl, httpOptions);
     }
     return this.http.get<AnimalResponse[]>(this.baseUrl);  
   }
