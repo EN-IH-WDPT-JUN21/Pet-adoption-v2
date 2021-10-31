@@ -24,6 +24,9 @@ export class PetItemComponent implements OnInit {
   submit(adopterName: string) {
     console.log(`animal name: ${this.animal.name}, animal id: ${this.animal.id}, adopter name: ${adopterName}`);
 
+    this.isAskingForAdopterName = false;
+    this.animal.available = false;
+
     this.animalAdoptionAPIService.adopt(this.animal.id, adopterName).subscribe(result => {
       console.log(result);
     })
