@@ -10,8 +10,10 @@
     <button class="btn btn-success" (click)='searchAnimals(selectedType, minAge, maxAge)'> Search</button>
 </div>
 <div class="container">
-    <div class="team">
-        <h3> Adoptable pets:</h3>
+    <h3> Adoptable pets:</h3>
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
         <app-pet-item *ngFor="let animal of animalList" [animal]="animal"></app-pet-item>
+        </ul>
     </div>
 </div>

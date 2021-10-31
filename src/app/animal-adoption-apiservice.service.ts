@@ -27,4 +27,17 @@ export class AnimalAdoptionAPIService {
     }
     return this.http.get<AnimalResponse[]>(this.baseUrl);  
   }
+
+  adopt(animalId: number, adopterName: string) {    
+    let dto = {
+      "name": adopterName,
+      "petId": animalId
+    }
+
+    console.log(dto);
+
+    return this.http.post(this.baseUrl + '/adopt', JSON.stringify(dto), {
+      headers : new HttpHeaders({'Content-Type': 'application/json'})
+    });
+  }
 }

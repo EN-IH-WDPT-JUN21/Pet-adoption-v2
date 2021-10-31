@@ -1,6 +1,8 @@
-<div>
-    {{animal.name}}
-    {{animal.age}}
-</div>
-
-<button class="btn btn-success"> Adopt </button>
+<li class="list-group-item">
+    {{animal.type.toLocaleLowerCase()}}: {{animal.name}}, age: {{animal.age}}
+    <button class="btn btn-success" (click)="askForAdopterName()" *ngIf="animal.available"> Adopt </button>
+    <div *ngIf="isAskingForAdopterName">
+        <input type="text" placeholder="Adopter's name" [(ngModel)]="adopterName">
+         <button class="btn btn-success" (click)="submit(adopterName)"> Submit </button>
+    </div>
+</li>

@@ -11,5 +11,8 @@ export class AnimalResponse {
 
 interface Animal {
     name: string,
-    age: number
+    age: number,
+    type: string,
+    id: number,
+    available: boolean
 }

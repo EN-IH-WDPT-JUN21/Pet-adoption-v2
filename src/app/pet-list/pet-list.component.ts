@@ -32,16 +32,11 @@ export class PetListComponent implements OnInit {
   }
 
   searchAnimals(type?:string, ageMin?: number, ageMax?: number):void {
-    console.log(`type: ${type}, minAge: ${ageMin}, maxAge: ${ageMax}`)  
-
     // reset animaList to an empty array first
     this.animalList = [];
 
     this.animalAdoptionAPIService.searchAnimals(type, ageMin, ageMax).subscribe(result => {
-      // const animalResponse: AnimalResponse = result;
-      console.log(result);
       this.animalList = result;
-      // console.log("Api test", AnimalResponse);
     });
   }
 }
